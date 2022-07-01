@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
 body{
-    font-family: 'Source Sans Pro', sans-serif;
-    background-image: url('../img/29366.jpg');
+    background-image: url('../img/login.jpg');
     background-position: center;
     background-size: cover;
 }
