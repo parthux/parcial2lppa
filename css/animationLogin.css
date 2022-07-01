@@ -1,0 +1,13 @@
+/*Animation Focus input start*/
+.formlogin__input:focus{
+    outline: none;
+}
+/*Animation Focus input end*/
+/*Animation button start*/
+.formlogin__button:hover{
+    transform: scale(0.9);
+    transition: transform 1s;
+    cursor: pointer;
+}
+/*Animation button end*/
+

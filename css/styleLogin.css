@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: url('../img/29366.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.main, .formlogin, .formlogin__fieldset{
+    display: flex;
+    overflow: hidden;
+}
+.main{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+}
+.formlogin, .formlogin__title, .formlogin__button, .formlogin__input{
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.formlogin{
+    flex-direction: column;
+    background-color: hsla(0, 0%, 0%, 0.223);
+    max-width: 20rem;
+    width: 100%;
+    padding: 2rem;
+}
+.formlogin__title{
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.formlogin__fieldset{
+    flex-direction: column;
+}
+.formlogin__fieldset--modification{
+    flex-direction: row;
+}
+.formlogin__input, .formlogin__button, .formlogin__label{
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: inherit;
+}
+.formlogin__input{
+    margin: 0.5rem 0;
+    height: 3.5rem;
+    padding: 0 1rem;
+    background-color: hsla(0, 0%, 0%, 0.195);
+}
+.formlogin__input--modification{
+    height: auto;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.formlogin__input--modification, .formlogin__label{
+    cursor: pointer;
+}
+.formlogin__label::before{
+    content: '';
+    background-color:hsla(0, 0%, 0%, 0.195);
+    border: 1.2px solid black;
+    float: left;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 0.3rem;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+.formlogin__input--modification:checked + .formlogin__label::before{
+    content: '✔';
+    color: green;
+}
+.formlogin__button{
+    padding: 0.7rem 0;
+    margin: 1rem 0;
+    background-color: hsla(120, 100%, 25%, 0.597);
+}
+

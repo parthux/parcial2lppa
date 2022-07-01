@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styleLogin.css">
+    <link rel="stylesheet" href="./css/animationLogin.css">
+    <title>Log In</title>
+</head>
+<body>
+    <main class="main">
+        <form action="" class="formlogin">
+            <h1 class="formlogin__title">
+                Log In
+            </h1>
+            <fieldset class="formlogin__fieldset">
+                <input type="email" class="formlogin__input" placeholder="E-mail" id="email" required>
+                <input type="password" class="formlogin__input" placeholder="Password" id="password" required>
+            </fieldset>
+            <fieldset class="formlogin__fieldset">
+                <button class="formlogin__button">
+                    Log In
+                </button>
+            </fieldset>
+            <fieldset class="formlogin__fieldset formlogin__fieldset--modification">
+                <input type="checkbox" name="save" id="save" class="formlogin__input formlogin__input--modification">
+                <label for="save" class="formlogin__label">
+                    Remember me
+                </label>
+            </fieldset>
+        </form>
+    </main>
+</body>
+<footer class="footer">
+    <script src="./js/login.js"></script>
+</footer>
+</html>
