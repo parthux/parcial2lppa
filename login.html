@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styleLogin.css">
     <link rel="stylesheet" href="./css/animationLogin.css">
@@ -11,16 +12,18 @@
 </head>
 <body>
     <main class="main">
-        <form action="" class="formlogin">
+        <form action="" class="formlogin" id="form">
             <h1 class="formlogin__title">
                 Log In
             </h1>
-            <fieldset class="formlogin__fieldset">
-                <input type="email" class="formlogin__input" placeholder="E-mail" id="email" required>
-                <input type="password" class="formlogin__input" placeholder="Password" id="password" required>
+            <fieldset class="formlogin__fieldset" id="fielsetInputs">
+                <input type="text" class="formlogin__input" name="email" id="email" placeholder="E-mail">
+                <p class="form__paragrapth" id="errorEmail">Email Invalido.</p>
+                <input type="password" class="formlogin__input" name="password" id="password" placeholder="Password">
+                <p class="form__paragrapth" id="errorPassword">La Contraseña tiene que tener 8 caracteres, sin caracteres especiales.</p>
             </fieldset>
             <fieldset class="formlogin__fieldset">
-                <button class="formlogin__button">
+                <button class="formlogin__button" type="submit">
                     Log In
                 </button>
             </fieldset>

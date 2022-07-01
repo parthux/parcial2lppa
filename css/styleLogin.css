@@ -39,7 +39,7 @@ body{
 .formlogin__fieldset--modification{
     flex-direction: row;
 }
-.formlogin__input, .formlogin__button, .formlogin__label{
+.formlogin__input, .formlogin__button,.form__paragrapth, .formlogin__label{
     font-size: 1.1rem;
     font-weight: 300;
     font-family: inherit;
@@ -58,6 +58,13 @@ body{
 }
 .formlogin__input--modification, .formlogin__label{
     cursor: pointer;
+}
+.form__paragrapth{
+    display: block;
+    height: 0;
+    opacity: 0;
+    padding-left: 0.5rem;
+    color: hsla(0, 0%, 100%, 0.742);
 }
 .formlogin__label::before{
     content: '';
@@ -79,4 +86,10 @@ body{
     margin: 1rem 0;
     background-color: hsla(120, 100%, 25%, 0.597);
 }
-
+/*javascript start*/
+.form__paragrapth--show{
+    height: auto;
+    opacity: 1;
+    transition: all 1s;
+}
+/*javascript end*/
