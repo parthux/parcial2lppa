@@ -1,16 +1,21 @@
+//cheack login
+/*const testlogin = (localStorage.getItem ("logit")) ? true : false
+if(testlogin != false){
+    location.href ='/board.html';
+}*/
 //validation data inputs
 const flagInputs ={
     email: false,
     password: false
 }
-const errorMessage = (error, nameInput)=>{
+const errorMessage = ((error, nameInput)=>{
     if (error == false){
         document.getElementById(`${nameInput}`).classList.add('form__paragrapth--show');
     }else{
         document.getElementById(`${nameInput}`).classList.remove('form__paragrapth--show');
     }
-}
-const validation = (e) =>{
+});
+const validation = ((e) =>{
     let error =false;
     switch(e.target.name){
         case 'email':
@@ -25,8 +30,7 @@ const validation = (e) =>{
             }
         break;
         case 'password':
-            const passwordValidation =  /[a-zA-z0-9]{8}/
-            if (passwordValidation.test(e.target.value)){
+            if (e.target.value.length == 8){
                 flagInputs.password = true;
                 error = true;
                 errorMessage(error,'errorPassword');
@@ -36,7 +40,7 @@ const validation = (e) =>{
             }
         break;
     }
-}
+});
 const inputs = document.getElementById('fielsetInputs');
 inputs.addEventListener('keyup', validation);
 inputs.addEventListener('blur', validation);
@@ -48,19 +52,22 @@ form.addEventListener('submit',(e) =>{
     if(flagInputs.email != false && flagInputs.password != false){
         fetch('https://basic-server-one.vercel.app/login', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({
-                email: 'principematias23@gmail.com',
-                password: '1245370891'
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
             })
         })
         .then((resolve) =>{
-            resolve.json();
+            location.href ='/board.html';
+            localStorage.setItem('logit', true);
         })
-        .then((respuesta)=>{
-            console.log(respuesta);
-        })
-        .catch((error) =>{
-            alert('no se encuentra el servidor');
+        .catch(() =>{
+            setTimeout(()=>{
+                document.getElementById('errorLogin').classList.add('form__paragrapth--show');
+            },2000);
         })
     }else{
         if(flagInputs.email != true){
@@ -74,21 +81,32 @@ form.addEventListener('submit',(e) =>{
 //checked
 const saveData = document.getElementById('save');
 saveData.addEventListener('click',(e)=>{
-    if(e.target.checked == true && (document.getElementById('email').value != '' || document.getElementById('password').value !='')){
+    if(e.target.checked != false && (document.getElementById('email').value != '' || document.getElementById('password').value != '')){
         if(document.getElementById('email').value != ''){
             localStorage.setItem('email', document.getElementById('email').value);
         }
         if(document.getElementById('password').value !=''){
             localStorage.setItem('password', document.getElementById('password').value);
         }
+        localStorage.setItem('flagInputsEmail', flagInputs.email);
+        localStorage.setItem('flagInputsPass', flagInputs.password);
         localStorage.setItem('checked', e.target.checked);
     }else{
         localStorage.removeItem('email');
         localStorage.removeItem('password');
+        localStorage.removeItem('flagInputsEmail');
+        localStorage.removeItem('flagInputsPass');
         localStorage.removeItem('checked');
     }
 });
-//restore data inputs
+//restore data of inputs and flagInputs
 document.getElementById('email').value = localStorage.getItem('email');
 document.getElementById('password').value = localStorage.getItem('password');
-document.getElementById('save').checked = localStorage.getItem('checked');
+document.getElementById('save').checked = ((localStorage.getItem ("checked")) ? true : false);
+flagInputs.email = ((localStorage.getItem ("flagInputsEmail")) ? true : false);
+flagInputs.password = ((localStorage.getItem ("flagInputsPass")) ? true : false);
+
+
+
+
+
