@@ -1,7 +1,7 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin != false){
-    location.href ='/board.html';
+    location.href = `${location.origin}/board.html`;
 }
 //restore data inputs
 document.getElementById('email').value = localStorage.getItem('email');
@@ -68,7 +68,7 @@ form.addEventListener('submit',(e) =>{
             })
         })
         .then((response) =>{
-            location.href ='/board.html';
+            location.href = `${location.origin}/board.html`;
             localStorage.setItem('logit', 'true');
         })
         .catch(() =>{
