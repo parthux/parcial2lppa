@@ -1,7 +1,7 @@
 //cheack login
-const testlogin = (localStorage.getItem ("logit")) ? true : false
+const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin != true){
-    location.href='/login.html';
+    location.href ='/login.html';
 }
 //button logout
 const logoutUser = document.getElementById('iconLogout');
@@ -10,6 +10,6 @@ logoutUser.addEventListener('click', ()=>{
 });
 const ButtonLogout = document.querySelector('#containerButtonLogout .header__button');
 ButtonLogout.addEventListener('click', ()=>{
-    localStorage.removeItem('logit');
+    localStorage.setItem('logit','false');
     location.href='/login.html';
 });

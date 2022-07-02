@@ -1,5 +1,5 @@
 //cheack login
-const testlogin = (localStorage.getItem ("logit")) ? true : false
+const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin != false){
     location.href ='/board.html';
 }
@@ -67,17 +67,18 @@ form.addEventListener('submit',(e) =>{
                 password: document.getElementById('password').value
             })
         })
-        .then((resolve) =>{
+        .then((response) =>{
             location.href ='/board.html';
-            localStorage.setItem('logit', true);
+            localStorage.setItem('logit', 'true');
         })
         .catch(() =>{
+            document.getElementById('errorLogin').classList.add('form__paragrapth--show');
+            document.getElementById('errorLogin').style.marginBottom ='1rem'
             setTimeout(()=>{
-                document.getElementById('errorLogin').classList.add('form__paragrapth--show');
-            },2000);
+                document.getElementById('errorLogin').classList.remove('form__paragrapth--show');
+                document.getElementById('errorLogin').style.marginBottom ='0rem'
+            },5000);
         })
-        flagInputs.email= false;
-        flagInputs.password= false;
     }else{
         if(flagInputs.email != true){
             errorMessage(error,'errorEmail');
@@ -110,8 +111,8 @@ saveData.addEventListener('click',(e)=>{
 });
 //restore data flag
 if (saveData.checked != false){
-    flagInputs.email =  JSON.parse(localStorage.getItem ("flagInputsEmail"));
-    flagInputs.password = JSON.parse(localStorage.getItem ("flagInputsPass"));
+    flagInputs.email =  JSON.parse(localStorage.getItem ('flagInputsEmail'));
+    flagInputs.password = JSON.parse(localStorage.getItem ('flagInputsPass'));
 }
 
 
