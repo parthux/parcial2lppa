@@ -1,10 +1,10 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
-if(testlogin == true){
+if(testlogin == false){
     if (location.origin == 'https://parthux.github.io'){
-        window.location.assign(`/parcial2lppa/index1.html`);
+        window.location.assign(`/parcial2lppa/index.html`);
     }else{
-        window.location.assign(`/index1.html`);
+        window.location.assign(`/index.html`);
     }
 }
 //button logout
@@ -16,9 +16,9 @@ const ButtonLogout = document.querySelector('#containerButtonLogout .header__but
 ButtonLogout.addEventListener('click', ()=>{
     localStorage.setItem('logit','false');
     if (location.origin == 'https://parthux.github.io'){
-        window.location.assign(`/parcial2lppa/index1.html`);
+        window.location.assign(`/parcial2lppa/index.html`);
     }else{
-        window.location.assign(`/index1.html`);
+        window.location.assign(`/index.html`);
     }
 });
 const tabla = ((resultJson)=>{
