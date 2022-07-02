@@ -1,5 +1,73 @@
+:root{
+    --backgound-color:hsla(0, 0%, 0%, 0.251);
+    --color:white;
+}
 body{
     background-image: url('../img/board.png');
     background-position: center;
     background-size: cover;
 }
+.header,.header__button-container, .main{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    height: 10vh;
+    background-color: var(--backgound-color);
+    position: relative;
+}
+.header__title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color);
+}
+.main{
+    height: 80vh;
+}
+.table{
+    height: 50vh;
+    width: 50vw;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--backgound-color);
+}
+.header__icon{
+    position: absolute;
+    right: 5rem;
+    top: auto;
+    width: 2.5rem;
+}
+.header__button-container{
+    position: absolute;
+    flex-direction: column;
+    z-index: 10;
+    right: 2rem;
+    top:10vh;
+    background-color: var(--backgound-color);
+    height: auto;
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 1s;
+    border-radius: 0px 0px 10px 10px;
+}
+.header__icon-logout{
+    width: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.header__button{
+    padding: 0.3rem;
+    border: none;
+    border-radius: 15px;
+    background-color: hsla(0, 100%, 50%, 0.66);
+    color: var(--color);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+/*javascript start*/
+.header__button-container--show{
+    opacity: 1;
+    transition: opacity 1s;
+}
+/*javascript end*/

@@ -1,8 +1,12 @@
 //cheack login
-/*const testlogin = (localStorage.getItem ("logit")) ? true : false
+const testlogin = (localStorage.getItem ("logit")) ? true : false
 if(testlogin != false){
     location.href ='/board.html';
-}*/
+}
+//restore data inputs
+document.getElementById('email').value = localStorage.getItem('email');
+document.getElementById('password').value = localStorage.getItem('password');
+document.getElementById('save').checked = ((localStorage.getItem ("checked")) ? true : false);
 //validation data inputs
 const flagInputs ={
     email: false,
@@ -41,9 +45,15 @@ const validation = ((e) =>{
         break;
     }
 });
-const inputs = document.getElementById('fielsetInputs');
-inputs.addEventListener('keyup', validation);
-inputs.addEventListener('blur', validation);
+//input event
+const inputs = document.querySelectorAll('#fielsetInputs .formlogin__input');
+inputs.forEach((input)=>{
+    input.addEventListener('keyup', validation);
+    input.addEventListener('blur', validation);
+});
+//restore data flag
+flagInputs.email = ((localStorage.getItem ("flagInputsEmail")) ? true : false);
+flagInputs.password = ((localStorage.getItem ("flagInputsPass")) ? true : false);
 //intro
 const form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
@@ -69,6 +79,8 @@ form.addEventListener('submit',(e) =>{
                 document.getElementById('errorLogin').classList.add('form__paragrapth--show');
             },2000);
         })
+        flagInputs.email= false;
+        flagInputs.password= false;
     }else{
         if(flagInputs.email != true){
             errorMessage(error,'errorEmail');
@@ -99,12 +111,7 @@ saveData.addEventListener('click',(e)=>{
         localStorage.removeItem('checked');
     }
 });
-//restore data of inputs and flagInputs
-document.getElementById('email').value = localStorage.getItem('email');
-document.getElementById('password').value = localStorage.getItem('password');
-document.getElementById('save').checked = ((localStorage.getItem ("checked")) ? true : false);
-flagInputs.email = ((localStorage.getItem ("flagInputsEmail")) ? true : false);
-flagInputs.password = ((localStorage.getItem ("flagInputsPass")) ? true : false);
+
 
 
 
