@@ -1,7 +1,11 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin == true){
-    window.location.assign(`/index2.html`);
+    if (location.origin == 'https://parthux.github.io'){
+        window.location.assign(`/parcial2lppa/index2.html`);
+    }else{
+        window.location.assign(`/index2.html`);
+    }
 }
 //restore data inputs
 document.getElementById('email').value = localStorage.getItem('email');
@@ -68,7 +72,11 @@ form.addEventListener('submit',(e) =>{
             })
         })
         .then((response) =>{
-            window.location.assign(`/index2.html`);
+            if (location.origin == 'https://parthux.github.io'){
+                window.location.assign(`/parcial2lppa/index2.html`);
+            }else{
+                window.location.assign(`/index2.html`);
+            }
             localStorage.setItem('logit', 'true');
         })
         .catch(() =>{
