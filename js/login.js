@@ -6,20 +6,12 @@ if(testlogin != false){
 //restore data inputs
 document.getElementById('email').value = localStorage.getItem('email');
 document.getElementById('password').value = localStorage.getItem('password');
-document.getElementById('save').checked = ((localStorage.getItem ("checked")) ? true : false);
-//flag inputs
+document.getElementById('save').checked = JSON.parse(localStorage.getItem ('checked'));
+//validation data inputs
 const flagInputs ={
     email: false,
     password: false
 }
-//restore data flag
-if (document.getElementById('email').value != ''){
-    flagInputs.email = ((localStorage.getItem ("flagInputsEmail")) ? true : false);
-}
-if (document.getElementById('password').value != ''){
-    flagInputs.password = ((localStorage.getItem ("flagInputsPass")) ? true : false);
-}
-//validation data inputs
 const errorMessage = ((error, nameInput)=>{
     if (error == false){
         document.getElementById(`${nameInput}`).classList.add('form__paragrapth--show');
@@ -116,8 +108,11 @@ saveData.addEventListener('click',(e)=>{
         localStorage.removeItem('checked');
     }
 });
-
-
+//restore data flag
+if (saveData.checked != false){
+    flagInputs.email =  JSON.parse(localStorage.getItem ("flagInputsEmail"));
+    flagInputs.password = JSON.parse(localStorage.getItem ("flagInputsPass"));
+}
 
 
 
