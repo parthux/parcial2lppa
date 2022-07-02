@@ -1,6 +1,6 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
-if(testlogin != false){
+if(testlogin == true){
     window.location.assign(`${window.location.origin}/board.html`);
 }
 //restore data inputs
