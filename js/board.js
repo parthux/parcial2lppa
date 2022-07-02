@@ -1,7 +1,7 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin != true){
-    location.href = `${location.origin}/login.html`;
+    window.location.assign(`${window.location.origin}/login.html`);
 }
 //button logout
 const logoutUser = document.getElementById('iconLogout');
