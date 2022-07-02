@@ -23,28 +23,6 @@ body{
     font-weight: 700;
     color: var(--color);
 }
-.main{
-    height: 80vh;
-}
-.table{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--backgound-color);
-}
-.table__td{
-    color:var(--color);
-    font-weight: 300;
-    font-size: 1.3rem;
-    text-align: left;
-    padding: 0.2rem;
-}
-.table__td--modif{
-    text-decoration: underline;
-    font-weight: 700;
-}
 .header__icon{
     position: absolute;
     right: 5rem;
@@ -76,6 +54,29 @@ body{
     color: var(--color);
     font-weight: 300;
     font-size: 1.1rem;
+}
+.main{
+    height: 90vh;
+    padding: 0 1rem;
+}
+.table{
+    display: block;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--backgound-color);
+    overflow-x: auto;
+}
+.table__th, .table__td{
+    color:var(--color);
+    font-weight: 300;
+    font-size: 1.3rem;
+    text-align: left;
+    padding: 0.2rem;
+}
+.table__th{
+    text-decoration: underline;
+    font-weight: 700;
 }
 /*javascript start*/
 .header__button-container--show{
