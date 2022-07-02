@@ -55,7 +55,7 @@ body{
     position: absolute;
     flex-direction: column;
     z-index: 10;
-    right: 2rem;
+    right: 3.55rem;
     top:10vh;
     background-color: var(--backgound-color);
     height: auto;
@@ -71,7 +71,7 @@ body{
 .header__button{
     padding: 0.3rem;
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: hsla(0, 100%, 50%, 0.66);
     color: var(--color);
     font-weight: 300;
