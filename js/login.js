@@ -1,7 +1,7 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin == true){
-    window.location.assign(`${window.location.origin}/index2.html`);
+    window.location.assign(`/index2.html`);
 }
 //restore data inputs
 document.getElementById('email').value = localStorage.getItem('email');
@@ -68,7 +68,7 @@ form.addEventListener('submit',(e) =>{
             })
         })
         .then((response) =>{
-            window.location.assign(`${window.location.origin}/index2.html`);
+            window.location.assign(`/index2.html`);
             localStorage.setItem('logit', 'true');
         })
         .catch(() =>{

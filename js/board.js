@@ -1,7 +1,7 @@
 //cheack login
 const testlogin = JSON.parse(localStorage.getItem('logit'));
 if(testlogin == false){
-    window.location.assign(`${window.location.origin}/index.html`);
+    window.location.assign(`/index.html`);
 }
 //button logout
 const logoutUser = document.getElementById('iconLogout');
@@ -11,7 +11,7 @@ logoutUser.addEventListener('click', ()=>{
 const ButtonLogout = document.querySelector('#containerButtonLogout .header__button');
 ButtonLogout.addEventListener('click', ()=>{
     localStorage.setItem('logit','false');
-    location.href='/login.html';
+    window.location.assign(`/index.html`);
 });
 const tabla = ((resultJson)=>{
     const contTable = document.getElementById('contTable');
