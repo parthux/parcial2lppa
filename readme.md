@@ -1,1 +1,1 @@
-https://github.com/parthux/parcial2lppa.git
+https://parthux.github.io/parcial2lppa/
