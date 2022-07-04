@@ -8,13 +8,11 @@ if(testlogin == false){
     }
 }
 //button logout
-document.querySelector('#containerButtonLogout .header__button').disabled = true;//disable button opacity 0
 const logoutUser = document.getElementById('iconLogout');
 logoutUser.addEventListener('click', ()=>{
     document.getElementById('containerButtonLogout').classList.toggle('header__button-container--show');
-    document.querySelector('#containerButtonLogout .header__button').disabled = false;//active button opacity 1
 });
-const ButtonLogout = document.querySelector('#containerButtonLogout .header__button');
+const ButtonLogout = document.getElementById('header__button');
 ButtonLogout.addEventListener('click', ()=>{
     localStorage.setItem('logit','false');
     if (location.origin == 'https://parthux.github.io'){

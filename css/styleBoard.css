@@ -36,10 +36,10 @@ body{
     right: 3.55rem;
     top:10vh;
     background-color: var(--backgound-color);
-    height: auto;
     padding: 0.5rem;
-    opacity: 0;
-    transition: opacity 1s;
+    visibility:hidden;
+    opacity:0;
+    transition: all 1s;
     border-radius: 0px 0px 10px 10px;
 }
 .header__icon-logout{
@@ -80,7 +80,8 @@ body{
 }
 /*javascript start*/
 .header__button-container--show{
-    opacity: 1;
-    transition: opacity 1s;
+    visibility:visible;
+    opacity:1;
+    transition: all 1s;
 }
 /*javascript end*/
