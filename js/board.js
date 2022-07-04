@@ -25,7 +25,7 @@ const tabla = ((resultJson)=>{
     const contTable = document.getElementById('contTable');
     for(let i of resultJson['data']){
         contTable.innerHTML +=`
-        <tr class='table__tr'>
+        <tr class='table__tr tabla__tr--animation'>
             <td class='table__td'>${i.id}</td>
             <td class='table__td'>${i.name}</td>
             <td class='table__td'>${i.email}</td>

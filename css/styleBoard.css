@@ -66,16 +66,18 @@ body{
     border-radius: 10px;
     background-color: var(--backgound-color);
     overflow-x: auto;
+    text-align: left;
+}
+.tabla__header{
+    border-bottom: 1px solid white;
 }
 .table__th, .table__td{
     color:var(--color);
     font-weight: 300;
     font-size: 1.3rem;
-    text-align: left;
-    padding: 0.2rem;
+    padding: 0.3rem;
 }
 .table__th{
-    text-decoration: underline;
     font-weight: 700;
 }
 /*javascript start*/

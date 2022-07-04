@@ -10,3 +10,8 @@
     cursor: pointer;
 }
 /*Animation button end*/
+/*Animation table board start*/
+.tabla__tr--animation:hover{
+    background-color: hsla(0, 0%, 0%, 0.473);
+}
+/*Animation table board end*/
