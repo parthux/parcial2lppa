@@ -59,7 +59,9 @@ inputs.forEach((input)=>{
 const form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
     e.preventDefault();
-    let error = false;
+    const emailinput = document.getElementById('email').value;
+    const passwordinput = document.getElementById('password').value;
+    const error = false;
     if(flagInputs.email != false && flagInputs.password != false){
         fetch('https://basic-server-one.vercel.app/login', {
             method: "POST",
@@ -67,25 +69,32 @@ form.addEventListener('submit',(e) =>{
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
+                email: emailinput,
+                password: passwordinput
             })
         })
-        .then((response) =>{
-            if (location.origin == 'https://parthux.github.io'){
-                window.location.assign(`/parcial2lppa/index2.html`);
-            }else{
-                window.location.assign(`/index2.html`);
-            }
-            localStorage.setItem('logit', 'true');
+        .then((response)=>{
+            return response.json()
         })
-        .catch(() =>{
-            document.getElementById('errorLogin').classList.add('form__paragrapth--show');
-            document.getElementById('errorLogin').style.marginBottom ='1rem'
+        .then((responseJson)=>{
+            if (responseJson.error !=true){
+                if (location.origin == 'https://parthux.github.io'){
+                    window.location.assign(`/parcial2lppa/index2.html`);
+                }else{
+                    window.location.assign(`/index2.html`);
+                }
+                localStorage.setItem('logit', 'true');
+            }else{
+                document.getElementById('errorLogin').classList.add('form__paragrapth--show');
+                document.getElementById('errorLogin').style.marginBottom ='1rem'
             setTimeout(()=>{
                 document.getElementById('errorLogin').classList.remove('form__paragrapth--show');
                 document.getElementById('errorLogin').style.marginBottom ='0rem'
             },5000);
+            }
+        })
+        .catch((error) =>{
+            console.log(error);
         })
     }else{
         if(flagInputs.email != true){
